@@ -72,7 +72,11 @@ for (let copyBtn of copyBtns) {
     e.preventDefault();
 
     const copyValue = document.getElementById("copy-value").innerText;
-    const copyBbutton = copyBtn.parentNode.parentNode.childNodes[0].innerText;
+    console.log("-----");
+    const copyBbutton =
+      e.target.parentNode.parentNode.children[1].children[2].innerText;
+    console.log(copyBbutton);
+    navigator.clipboard.writeText(copyBbutton);
     alert(copyBbutton + "text copied");
     document.getElementById("copy-value").innerText = parseInt(copyValue) + 1;
 
